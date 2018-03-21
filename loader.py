@@ -207,6 +207,7 @@ def load_data():
     images_heavy_aug = heavy_augment(images)
 
     image_data = np.asarray(images + images_simple_aug + images_heavy_aug)
+    # Normalize image vectors
     image_data_flatten = image_data.reshape(image_data.shape[0], -1).T / 255
 
     num_example = len(image_data)
@@ -243,11 +244,12 @@ if __name__ == "__main__":
 
     X_train, X_test, y_train, y_test = load_data()
 
-    print "X_train {}".format(X_train.shape)
-    print "X_test {}".format(X_test.shape)
-    print "y_train {}".format(y_train.shape)
-    print "y_test {}".format(y_test.shape)
-
+    print ("number of training examples = " + str(X_train.shape[1]))
+    print ("number of test examples = " + str(X_test.shape[1]))
+    print ("X_train shape: " + str(X_train.shape))
+    print ("Y_train shape: " + str(y_train.shape))
+    print ("X_test shape: " + str(X_test.shape))
+    print ("Y_test shape: " + str(y_test.shape))
 
     # Training model
     # layers_dims = (X_train.shape[0], 100, y_train.shape[0])
