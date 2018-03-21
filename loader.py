@@ -11,9 +11,6 @@ from sklearn.model_selection import train_test_split
 # from model import predict
 import scipy
 
-from jwchen.model import L_layer_model
-from jwchen.model import predict
-
 def load_images_from_folder(folder):
     images = []
     file_names = []
@@ -253,17 +250,17 @@ if __name__ == "__main__":
 
 
     # Training model
-    layers_dims = (X_train.shape[0], 100, y_train.shape[0])
-    parameters = L_layer_model(X_train, y_train, layers_dims, learning_rate=0.075, num_iterations=10, print_cost=True)
-    print "Training finished! Time used {} seconds!".format(time.time() - start_time)
+    # layers_dims = (X_train.shape[0], 100, y_train.shape[0])
+    # parameters = L_layer_model(X_train, y_train, layers_dims, learning_rate=0.075, num_iterations=10, print_cost=True)
+    # print "Training finished! Time used {} seconds!".format(time.time() - start_time)
 
     # Predict
-    predictions = predict(parameters, X_test)
+    # predictions = predict(parameters, X_test)
 
     # print predictions
     # print y_test
     # print predictions - y_test
     # print (np.sum(predictions - y_test, axis=0) == 0).shape
 
-    print "Accuracy: {}".format(np.sum(np.sum(predictions - y_test, axis=0) == 0)/y_test.shape[1])
+    # print "Accuracy: {}".format(np.sum(np.sum(predictions - y_test, axis=0) == 0)/y_test.shape[1])
     # print ('Accuracy: %d' % float((np.dot(y_test, predictions.T) + np.dot(1 - y_test, 1 - predictions.T)) / float(y_test.size) * 100) + '%')
