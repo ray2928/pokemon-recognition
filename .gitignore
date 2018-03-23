@@ -41,3 +41,4 @@ jolt/tasks.list
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+/share

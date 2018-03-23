@@ -7,9 +7,8 @@ import matplotlib.image as mpimg
 import time
 import numpy as np
 from sklearn.model_selection import train_test_split
-# from model import L_layer_model
-# from model import predict
 import scipy
+from model import model
 
 def load_images_from_folder(folder):
     images = []
@@ -253,6 +252,7 @@ if __name__ == "__main__":
 
     # Training model
     # layers_dims = (X_train.shape[0], 100, y_train.shape[0])
+    parameters = model(X_train, y_train, X_test, y_test, learning_rate = 0.0001, num_epochs = 1, minibatch_size = 32, print_cost = True)
     # parameters = L_layer_model(X_train, y_train, layers_dims, learning_rate=0.075, num_iterations=10, print_cost=True)
     # print "Training finished! Time used {} seconds!".format(time.time() - start_time)
 
